@@ -1,0 +1,15 @@
+{
+  "imgsz": 640,
+  "seed": 42,
+  "normalize": "0_1",
+  "letterbox_color": 114,
+  "train_augmentations": {
+    "horizontal_flip_p": 0.5,
+    "brightness_delta": 0.15,
+    "hsv_h": 0.015,
+    "hsv_s": 0.4,
+    "hsv_v": 0.3
+  },
+  "val_augmentations": null,
+  "leakage_policy": "Augmentations applied only to samples listed in train.txt; val.txt never augmented for preview/export."
+}
