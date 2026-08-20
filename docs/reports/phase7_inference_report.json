@@ -1,0 +1,47 @@
+{
+  "phase": 7,
+  "sample": "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\data\\raw\\coco128\\images\\train2017\\000000000009.jpg",
+  "num_detections": 3,
+  "latency_ms": 3188.7459000136005,
+  "model": "best.pt",
+  "annotated": "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\docs\\reports\\phase7_sample_annotated.jpg",
+  "thresholds": {
+    "conf": 0.25,
+    "iou": 0.45
+  },
+  "preview_detections": [
+    {
+      "class_id": 50,
+      "class_name": "broccoli",
+      "confidence": 0.8518765568733215,
+      "bbox": {
+        "x1": 254.67379760742188,
+        "y1": 236.78636169433594,
+        "x2": 558.856689453125,
+        "y2": 473.3840026855469
+      }
+    },
+    {
+      "class_id": 45,
+      "class_name": "bowl",
+      "confidence": 0.6475575566291809,
+      "bbox": {
+        "x1": 0.0,
+        "y1": 191.83828735351562,
+        "x2": 640.0,
+        "y2": 480.0
+      }
+    },
+    {
+      "class_id": 45,
+      "class_name": "bowl",
+      "confidence": 0.31460025906562805,
+      "bbox": {
+        "x1": 0.0,
+        "y1": 2.126206636428833,
+        "x2": 628.9976196289062,
+        "y2": 244.73460388183594
+      }
+    }
+  ]
+}

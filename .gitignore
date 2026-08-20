@@ -1,0 +1,55 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environments (project uses local Python; still ignore if created accidentally)
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# Node / frontend
+node_modules/
+frontend/dist/
+frontend/build/
+*.local
+
+# ML / data artifacts
+data/raw/**
+data/processed/**
+data/splits/**
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/splits/.gitkeep
+ml/models/**
+!ml/models/.gitkeep
+ml/runs/
+*.pt
+*.pth
+*.onnx
+*.engine
+runs/
+wandb/
+ultralytics/
+yolov8*.pt
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Logs / temp
+*.log
+tmp/
+temp/
+_pdf_extract.txt
+frontend/public/logos/_preview/

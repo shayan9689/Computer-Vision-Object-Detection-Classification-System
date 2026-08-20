@@ -1,0 +1,35 @@
+{
+  "phase": 4,
+  "timestamp": "2026-08-20T18:39:22.304638+00:00",
+  "hyperparameters": {
+    "model": "yolov8n.pt",
+    "epochs": 3,
+    "imgsz": 320,
+    "batch": 4,
+    "device": "cpu",
+    "workers": 0,
+    "patience": 10,
+    "seed": 42,
+    "project": "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\ml\\runs",
+    "name": "phase4_baseline",
+    "exist_ok": true
+  },
+  "environment": {
+    "python": "3.12.0",
+    "torch": "2.13.0+cpu",
+    "cuda_available": false,
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "checkpoints": {
+    "best": "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\ml\\runs\\phase4_baseline\\weights\\best.pt",
+    "last": "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\ml\\runs\\phase4_baseline\\weights\\last.pt",
+    "exported": "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\ml\\models\\phase4_baseline_best.pt"
+  },
+  "metrics": {
+    "metrics/precision(B)": 0.8209461896821053,
+    "metrics/recall(B)": 0.4983295076646424,
+    "metrics/mAP50(B)": 0.6538274027502163,
+    "metrics/mAP50-95(B)": 0.48213783147749784,
+    "fitness": 0.48213783147749784
+  }
+}

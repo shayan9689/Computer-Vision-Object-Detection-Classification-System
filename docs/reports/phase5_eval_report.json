@@ -1,0 +1,147 @@
+{
+  "phase": 5,
+  "summary": {
+    "weights": "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\ml\\models\\phase4_baseline_best.pt",
+    "map50": 0.5416522644927537,
+    "map50_95": 0.4348379363882897,
+    "precision": 0.6281018518518517,
+    "recall": 0.5508525293586269,
+    "fitness": 0.4348379363882897
+  },
+  "per_class_top": [
+    {
+      "class_id": 1,
+      "class_name": "bicycle",
+      "ap50": 0.995,
+      "ap": 0.8955
+    },
+    {
+      "class_id": 4,
+      "class_name": "airplane",
+      "ap50": 0.995,
+      "ap": 0.9949999999999999
+    },
+    {
+      "class_id": 6,
+      "class_name": "train",
+      "ap50": 0.995,
+      "ap": 0.796
+    },
+    {
+      "class_id": 11,
+      "class_name": "stop sign",
+      "ap50": 0.995,
+      "ap": 0.6965
+    },
+    {
+      "class_id": 17,
+      "class_name": "horse",
+      "ap50": 0.995,
+      "ap": 0.597
+    },
+    {
+      "class_id": 22,
+      "class_name": "zebra",
+      "ap50": 0.995,
+      "ap": 0.9949999999999999
+    },
+    {
+      "class_id": 50,
+      "class_name": "broccoli",
+      "ap50": 0.995,
+      "ap": 0.8955
+    },
+    {
+      "class_id": 53,
+      "class_name": "pizza",
+      "ap50": 0.995,
+      "ap": 0.6965
+    },
+    {
+      "class_id": 55,
+      "class_name": "cake",
+      "ap50": 0.995,
+      "ap": 0.8295000000000001
+    },
+    {
+      "class_id": 59,
+      "class_name": "bed",
+      "ap50": 0.995,
+      "ap": 0.6965
+    },
+    {
+      "class_id": 68,
+      "class_name": "microwave",
+      "ap50": 0.995,
+      "ap": 0.49749999999999994
+    },
+    {
+      "class_id": 69,
+      "class_name": "oven",
+      "ap50": 0.995,
+      "ap": 0.9949999999999999
+    },
+    {
+      "class_id": 75,
+      "class_name": "vase",
+      "ap50": 0.995,
+      "ap": 0.8955
+    },
+    {
+      "class_id": 3,
+      "class_name": "motorcycle",
+      "ap50": 0.9125000000000002,
+      "ap": 0.5562500000000001
+    },
+    {
+      "class_id": 45,
+      "class_name": "bowl",
+      "ap50": 0.9125000000000002,
+      "ap": 0.8382500000000002
+    },
+    {
+      "class_id": 23,
+      "class_name": "giraffe",
+      "ap50": 0.745,
+      "ap": 0.65775
+    },
+    {
+      "class_id": 43,
+      "class_name": "knife",
+      "ap50": 0.5762499999999999,
+      "ap": 0.32204166666666667
+    },
+    {
+      "class_id": 42,
+      "class_name": "fork",
+      "ap50": 0.495,
+      "ap": 0.495
+    },
+    {
+      "class_id": 60,
+      "class_name": "dining table",
+      "ap50": 0.495,
+      "ap": 0.36916666666666664
+    },
+    {
+      "class_id": 74,
+      "class_name": "clock",
+      "ap50": 0.495,
+      "ap": 0.4455
+    }
+  ],
+  "visualizations": [
+    "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\docs\\reports\\phase5_viz\\val_batch0_pred.jpg",
+    "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\docs\\reports\\phase5_viz\\val_batch1_pred.jpg",
+    "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\docs\\reports\\phase5_viz\\val_batch2_pred.jpg",
+    "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\docs\\reports\\phase5_viz\\val_batch0_pred.jpg",
+    "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\docs\\reports\\phase5_viz\\val_batch1_pred.jpg",
+    "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\docs\\reports\\phase5_viz\\val_batch2_pred.jpg",
+    "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\docs\\reports\\phase5_viz\\confusion_matrix.png",
+    "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\docs\\reports\\phase5_viz\\confusion_matrix_normalized.png"
+  ],
+  "notes": [
+    "COCO128 val is tiny; metrics are noisy and for pipeline verification only.",
+    "False positives/negatives are reviewed via Ultralytics pred/label batch plots."
+  ]
+}

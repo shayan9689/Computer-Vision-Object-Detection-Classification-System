@@ -1,0 +1,186 @@
+{
+  "dataset": "coco128",
+  "source": "https://github.com/ultralytics/assets/releases/download/v0.0.0/coco128.zip",
+  "license": "COCO annotations: Creative Commons Attribution 4.0; images from Flickr (various). Research/education use; check COCO terms for commercial.",
+  "path": "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\data\\raw\\coco128",
+  "num_images": 128,
+  "num_label_files": 128,
+  "num_instances": 941,
+  "num_classes_present": 71,
+  "missing_labels": 2,
+  "orphan_labels": 2,
+  "empty_labels": 0,
+  "bad_boxes": 0,
+  "top_classes": [
+    {
+      "id": 0,
+      "name": "person",
+      "count": 261
+    },
+    {
+      "id": 2,
+      "name": "car",
+      "count": 48
+    },
+    {
+      "id": 41,
+      "name": "cup",
+      "count": 36
+    },
+    {
+      "id": 56,
+      "name": "chair",
+      "count": 35
+    },
+    {
+      "id": 73,
+      "name": "book",
+      "count": 29
+    },
+    {
+      "id": 45,
+      "name": "bowl",
+      "count": 28
+    },
+    {
+      "id": 51,
+      "name": "carrot",
+      "count": 24
+    },
+    {
+      "id": 44,
+      "name": "spoon",
+      "count": 22
+    },
+    {
+      "id": 77,
+      "name": "teddy bear",
+      "count": 21
+    },
+    {
+      "id": 26,
+      "name": "handbag",
+      "count": 20
+    },
+    {
+      "id": 25,
+      "name": "umbrella",
+      "count": 18
+    },
+    {
+      "id": 39,
+      "name": "bottle",
+      "count": 18
+    },
+    {
+      "id": 20,
+      "name": "elephant",
+      "count": 17
+    },
+    {
+      "id": 43,
+      "name": "knife",
+      "count": 16
+    },
+    {
+      "id": 14,
+      "name": "bird",
+      "count": 16
+    }
+  ],
+  "class_histogram": {
+    "person": 261,
+    "bicycle": 6,
+    "car": 48,
+    "motorcycle": 6,
+    "airplane": 6,
+    "bus": 7,
+    "train": 4,
+    "truck": 12,
+    "boat": 6,
+    "traffic light": 14,
+    "stop sign": 2,
+    "bench": 9,
+    "bird": 16,
+    "cat": 4,
+    "dog": 9,
+    "horse": 2,
+    "elephant": 17,
+    "bear": 1,
+    "zebra": 4,
+    "giraffe": 9,
+    "backpack": 6,
+    "umbrella": 18,
+    "handbag": 20,
+    "tie": 7,
+    "suitcase": 4,
+    "frisbee": 5,
+    "skis": 1,
+    "snowboard": 7,
+    "sports ball": 6,
+    "kite": 10,
+    "baseball bat": 4,
+    "baseball glove": 7,
+    "skateboard": 5,
+    "tennis racket": 7,
+    "bottle": 18,
+    "wine glass": 16,
+    "cup": 36,
+    "fork": 6,
+    "knife": 16,
+    "spoon": 22,
+    "bowl": 28,
+    "banana": 1,
+    "sandwich": 2,
+    "orange": 4,
+    "broccoli": 11,
+    "carrot": 24,
+    "hot dog": 2,
+    "pizza": 5,
+    "donut": 14,
+    "cake": 4,
+    "chair": 35,
+    "couch": 6,
+    "potted plant": 14,
+    "bed": 3,
+    "dining table": 13,
+    "toilet": 2,
+    "tv": 2,
+    "laptop": 3,
+    "mouse": 2,
+    "remote": 8,
+    "cell phone": 8,
+    "microwave": 3,
+    "oven": 5,
+    "sink": 6,
+    "refrigerator": 5,
+    "book": 29,
+    "clock": 9,
+    "vase": 2,
+    "scissors": 1,
+    "teddy bear": 21,
+    "toothbrush": 5
+  },
+  "split_note": "COCO128 ships as a single train2017 folder (~128 images). We treat it as train and use a held-out 20% copy for val in data/splits (no leakage of files across roles for our local pipeline).",
+  "limitations": [
+    "Very small; metrics are noisy and not comparable to full COCO.",
+    "Class imbalance is strong (person dominates).",
+    "Not for production accuracy claims."
+  ],
+  "problematic_samples": {
+    "missing_label_files": [
+      "000000000250.jpg",
+      "000000000508.jpg"
+    ],
+    "action": "Excluded from train/val splits"
+  },
+  "splits": {
+    "train_images": 101,
+    "val_images": 25,
+    "excluded_images": 2,
+    "train_list": "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\data\\splits\\train.txt",
+    "val_list": "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\data\\splits\\val.txt",
+    "data_yaml": "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\ml\\configs\\coco128_local.yaml"
+  },
+  "class_chart": "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\docs\\reports\\phase2_class_histogram.png"
+}

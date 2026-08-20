@@ -1,0 +1,17 @@
+{
+  "phase": 6,
+  "baseline_map50": 0.5416522644927537,
+  "improved_map50": 0.7040278645200466,
+  "selected_model": "phase6_improved",
+  "selected_path": "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\ml\\models\\best.pt",
+  "selection_reason": "phase6 mAP50 >= phase4/5 baseline",
+  "latency_ms_cpu_dummy": 82.44569999806117,
+  "hyperparams": {
+    "epochs": 2,
+    "imgsz": 416,
+    "batch": 4,
+    "lr0": 0.001,
+    "mosaic": 0.5,
+    "device": "cpu"
+  }
+}

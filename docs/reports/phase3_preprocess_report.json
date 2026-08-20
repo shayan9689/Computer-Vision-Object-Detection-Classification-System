@@ -1,0 +1,168 @@
+{
+  "config_path": "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\ml\\configs\\preprocess_config.json",
+  "train": {
+    "split": "train",
+    "source_count": 101,
+    "previews_written": 8,
+    "augmented": true,
+    "samples": [
+      {
+        "file": "000000000136.jpg",
+        "scale": 1.28,
+        "pad": [
+          0,
+          80
+        ],
+        "out": "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\data\\processed\\phase3\\train\\preview_00.jpg"
+      },
+      {
+        "file": "000000000138.jpg",
+        "scale": 1.0,
+        "pad": [
+          0,
+          33
+        ],
+        "out": "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\data\\processed\\phase3\\train\\preview_01.jpg"
+      },
+      {
+        "file": "000000000142.jpg",
+        "scale": 1.0,
+        "pad": [
+          80,
+          0
+        ],
+        "out": "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\data\\processed\\phase3\\train\\preview_02.jpg"
+      },
+      {
+        "file": "000000000143.jpg",
+        "scale": 1.0666666666666667,
+        "pad": [
+          0,
+          53
+        ],
+        "out": "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\data\\processed\\phase3\\train\\preview_03.jpg"
+      },
+      {
+        "file": "000000000144.jpg",
+        "scale": 1.0,
+        "pad": [
+          0,
+          80
+        ],
+        "out": "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\data\\processed\\phase3\\train\\preview_04.jpg"
+      },
+      {
+        "file": "000000000149.jpg",
+        "scale": 1.0,
+        "pad": [
+          0,
+          106
+        ],
+        "out": "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\data\\processed\\phase3\\train\\preview_05.jpg"
+      },
+      {
+        "file": "000000000151.jpg",
+        "scale": 1.0,
+        "pad": [
+          80,
+          0
+        ],
+        "out": "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\data\\processed\\phase3\\train\\preview_06.jpg"
+      },
+      {
+        "file": "000000000154.jpg",
+        "scale": 1.0,
+        "pad": [
+          106,
+          0
+        ],
+        "out": "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\data\\processed\\phase3\\train\\preview_07.jpg"
+      }
+    ]
+  },
+  "val": {
+    "split": "val",
+    "source_count": 25,
+    "previews_written": 8,
+    "augmented": false,
+    "samples": [
+      {
+        "file": "000000000009.jpg",
+        "scale": 1.0,
+        "pad": [
+          0,
+          80
+        ],
+        "out": "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\data\\processed\\phase3\\val\\preview_00.jpg"
+      },
+      {
+        "file": "000000000025.jpg",
+        "scale": 1.0,
+        "pad": [
+          0,
+          107
+        ],
+        "out": "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\data\\processed\\phase3\\val\\preview_01.jpg"
+      },
+      {
+        "file": "000000000030.jpg",
+        "scale": 1.0,
+        "pad": [
+          0,
+          106
+        ],
+        "out": "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\data\\processed\\phase3\\val\\preview_02.jpg"
+      },
+      {
+        "file": "000000000034.jpg",
+        "scale": 1.0,
+        "pad": [
+          0,
+          107
+        ],
+        "out": "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\data\\processed\\phase3\\val\\preview_03.jpg"
+      },
+      {
+        "file": "000000000036.jpg",
+        "scale": 1.0,
+        "pad": [
+          79,
+          0
+        ],
+        "out": "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\data\\processed\\phase3\\val\\preview_04.jpg"
+      },
+      {
+        "file": "000000000042.jpg",
+        "scale": 1.0,
+        "pad": [
+          0,
+          81
+        ],
+        "out": "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\data\\processed\\phase3\\val\\preview_05.jpg"
+      },
+      {
+        "file": "000000000049.jpg",
+        "scale": 1.28,
+        "pad": [
+          76,
+          0
+        ],
+        "out": "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\data\\processed\\phase3\\val\\preview_06.jpg"
+      },
+      {
+        "file": "000000000061.jpg",
+        "scale": 1.0,
+        "pad": [
+          0,
+          76
+        ],
+        "out": "D:\\AI\\Learning\\Computer-Vision-Object-Detection-Classification-System\\data\\processed\\phase3\\val\\preview_07.jpg"
+      }
+    ]
+  },
+  "leakage_check": {
+    "train_val_overlap": 0,
+    "pass": true
+  },
+  "note": "Preview pipeline validates letterbox+normalize+train-only aug. Ultralytics training uses ml/configs/coco128_local.yaml with built-in aug controlled in Phase 4."
+}
