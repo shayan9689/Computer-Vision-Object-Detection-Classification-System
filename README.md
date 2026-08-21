@@ -45,7 +45,7 @@ React (VisionLab UI)  ──►  FastAPI  ──►  YOLOv8n (CPU)  ──►  J
 | 💻 Frontend | React · Vite · Tailwind CSS |
 | ⚙️ Backend | Python · FastAPI · Uvicorn |
 | 🧪 CV / ML | OpenCV · PyTorch · Ultralytics YOLOv8n |
-| ☁️ Deploy | **Frontend → Vercel** · **Backend → Google Cloud Run** |
+| ☁️ Deploy | **Frontend → Vercel** · **Backend → Render** (or Google Cloud Run) |
 
 ---
 
@@ -62,7 +62,8 @@ React (VisionLab UI)  ──►  FastAPI  ──►  YOLOv8n (CPU)  ──►  J
 ├── data/              # Local datasets (gitignored contents)
 ├── docs/              # Guides, phase reports, portfolio notes
 ├── logos/             # Brand / UI icons
-├── Dockerfile         # Cloud Run backend image
+├── Dockerfile         # Backend Docker image (Render / Cloud Run)
+├── render.yaml        # Render Blueprint config
 └── README.md
 ```
 
@@ -124,7 +125,7 @@ If you already have `yolov8n.pt` in the repo root from Ultralytics, copy it:
 Copy-Item .\yolov8n.pt .\ml\models\pretrained_yolov8n.pt
 ```
 
-Cloud Run builds **download** weights automatically during the Docker image build.
+Cloud / Docker builds **download** weights automatically during the image build.
 
 ---
 
@@ -215,7 +216,8 @@ For everyday photos, the app prefers **official pretrained YOLOv8n** (better gen
 | Doc | What’s inside |
 |-----|----------------|
 | [Architecture](docs/ARCHITECTURE.md) | System design |
-| [Cloud Run guide](docs/CLOUD_RUN_GUIDE.md) | Backend deploy step-by-step |
+| [Render guide](docs/RENDER_GUIDE.md) | Backend deploy on Render |
+| [Cloud Run guide](docs/CLOUD_RUN_GUIDE.md) | Backend deploy on Google Cloud Run |
 | [Your inputs](docs/YOUR_INPUTS.md) | What you still need to do |
 | [Portfolio / LinkedIn](docs/PHASE12_PORTFOLIO.md) | Sharing notes |
 | [Phase reports](docs/) | Phase 1–12 summaries |
@@ -250,7 +252,7 @@ For everyday photos, the app prefers **official pretrained YOLOv8n** (better gen
 ## ⭐ Status
 
 ✅ Phases **1–12** complete locally  
-☁️ Backend deploy path: **Google Cloud Run**  
+☁️ Backend deploy path: **Render** (or Cloud Run)  
 🌐 Frontend deploy path: **Vercel**
 
 If this helped your learning journey, consider starring the repo ⭐

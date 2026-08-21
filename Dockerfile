@@ -1,4 +1,4 @@
-# Cloud Run backend image (FastAPI + YOLOv8 CPU)
+# Shared Docker image for Render / Cloud Run (FastAPI + YOLOv8 CPU)
 FROM python:3.12-slim
 
 WORKDIR /app
@@ -6,7 +6,7 @@ WORKDIR /app
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     PYTHONPATH=/app:/app/backend \
-    PORT=8080
+    PORT=8000
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libgl1 \
@@ -14,17 +14,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-# CPU-only PyTorch (smaller / correct for Cloud Run free CPU)
+# CPU-only PyTorch (correct for free CPU hosts)
 RUN pip install --no-cache-dir --upgrade pip \
     && pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu
 
-COPY backend/requirements-cloudrun.txt /app/requirements-cloudrun.txt
-RUN pip install --no-cache-dir -r /app/requirements-cloudrun.txt
+COPY backend/requirements-docker.txt /app/requirements-docker.txt
+RUN pip install --no-cache-dir -r /app/requirements-docker.txt
 
 COPY backend /app/backend
 COPY ml /app/ml
 
-# Weights are gitignored locally — download during image build
+# Weights are gitignored — download during image build
 RUN mkdir -p /app/ml/models \
     && curl -L --fail -o /app/ml/models/pretrained_yolov8n.pt \
       https://github.com/ultralytics/assets/releases/download/v8.4.0/yolov8n.pt \
@@ -32,5 +32,5 @@ RUN mkdir -p /app/ml/models \
 
 WORKDIR /app/backend
 
-# Cloud Run injects $PORT (must use shell form)
+# Render / Cloud Run inject $PORT
 CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT}"]

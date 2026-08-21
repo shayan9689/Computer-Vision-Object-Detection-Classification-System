@@ -1,4 +1,5 @@
-# Slim deps for Cloud Run inference (torch installed separately as CPU wheel)
+# Inference deps for Docker hosts (Render / Cloud Run)
+# torch is installed separately as a CPU wheel in the Dockerfile
 fastapi>=0.115.0
 uvicorn[standard]>=0.32.0
 python-multipart>=0.0.12

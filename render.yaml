@@ -1,0 +1,18 @@
+# Render Blueprint — backend API only
+# Docs: https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: visionlab-api
+    runtime: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    envVars:
+      - key: CORS_ORIGINS
+        sync: false
+        # Set in Render dashboard to:
+        # https://YOUR-APP.vercel.app,http://localhost:5173
+      - key: PYTHONUNBUFFERED
+        value: "1"
