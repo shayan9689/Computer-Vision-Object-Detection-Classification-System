@@ -171,30 +171,34 @@ You need **both** hosts for a live demo:
 | Piece | Platform | Why |
 |-------|----------|-----|
 | Frontend | **Vercel** | Static React app |
-| Backend | **Google Cloud Run** | Python + Torch + YOLO (not for Vercel alone) |
+| Backend | **Render** (or Cloud Run) | Python + Torch + YOLO (not for Vercel alone) |
 
-### Backend → Google Cloud Run (recommended)
+### Backend → Render (current path)
 
 Deep beginner walkthrough (every click):
 
-👉 **[docs/CLOUD_RUN_GUIDE.md](docs/CLOUD_RUN_GUIDE.md)**
+👉 **[docs/RENDER_GUIDE.md](docs/RENDER_GUIDE.md)**
 
 Summary:
 
-1. Create a GCP project + enable billing  
-2. Enable Cloud Run / Cloud Build APIs  
-3. Build & deploy with Cloud Shell using the root `Dockerfile`  
-4. Set `CORS_ORIGINS` to your Vercel URL  
-5. Set frontend `VITE_API_URL` to the Cloud Run URL  
+1. Render → **New +** → **Web Service** → connect this GitHub repo  
+2. Runtime **Docker**, Dockerfile `./Dockerfile`  
+3. Set env `CORS_ORIGINS=http://localhost:5173`  
+4. Wait for build → test `/health` and `/docs`  
+5. Point frontend `VITE_API_URL` at the Render URL  
+
+> Free Render is **512 MB RAM** — YOLO may run out of memory. If `/predict` crashes, upgrade to **Standard (2 GB)** or use Cloud Run.
+
+### Backend → Google Cloud Run (alternative)
+
+👉 **[docs/CLOUD_RUN_GUIDE.md](docs/CLOUD_RUN_GUIDE.md)**
 
 ### Frontend → Vercel
 
 1. Import this GitHub repo  
 2. Root directory: `frontend`  
-3. Env var: `VITE_API_URL=https://your-cloud-run-url` (no trailing slash)  
+3. Env var: `VITE_API_URL=https://your-render-url` (no trailing slash)  
 4. Redeploy after changing env vars  
-
-Also see: [docs/PHASE11_DEPLOY.md](docs/PHASE11_DEPLOY.md)
 
 ---
 
