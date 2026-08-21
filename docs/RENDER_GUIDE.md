@@ -148,10 +148,16 @@ npm run dev
 - Runtime must be **Docker**, not Python
 - Check Logs for `curl` / pip errors → **Manual Deploy** → clear build cache if available, redeploy
 
-### Live but `/predict` returns 500 / service restarts
-- Almost always **Out of Memory** on 512 MB  
-- Upgrade instance to **Standard (2 GB)**  
-- Or switch to Cloud Run with `--memory 2Gi` (see `docs/CLOUD_RUN_GUIDE.md`)
+### Live but goes offline after first image predict
+
+This is almost always **Out of Memory**.
+
+- `/health` is light → shows **online**
+- `/predict` loads YOLOv8 into RAM → Free plan (**512 MB**) kills the process → UI shows **offline**
+
+**Fix:** Render → service → **Change instance type** → **Standard (2 GB)** → save/redeploy.
+
+Memory tweaks in the Docker image help a little, but **YOLO + PyTorch needs ~1–2 GB**.
 
 ### CORS / frontend blocked
 - Set `CORS_ORIGINS` to your exact frontend origin(s)

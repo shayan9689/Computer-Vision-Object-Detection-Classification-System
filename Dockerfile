@@ -6,7 +6,12 @@ WORKDIR /app
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     PYTHONPATH=/app:/app/backend \
-    PORT=8000
+    PORT=8000 \
+    OMP_NUM_THREADS=1 \
+    MKL_NUM_THREADS=1 \
+    OPENBLAS_NUM_THREADS=1 \
+    TORCH_NUM_THREADS=1 \
+    YOLO_VERBOSE=False
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libgl1 \

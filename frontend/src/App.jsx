@@ -148,7 +148,12 @@ export default function App() {
       setResult(data)
       setVideoResult(null)
     } catch (err) {
-      setError(err.message || 'Prediction failed')
+      const msg = err.message || 'Prediction failed'
+      setError(
+        /fetch|network|failed/i.test(msg)
+          ? 'API stopped during detection. On Render Free (512 MB) the model often runs out of memory — upgrade to Standard (2 GB), wait for restart, then try again.'
+          : msg,
+      )
     } finally {
       setLoading(false)
     }

@@ -56,9 +56,12 @@ class DetectionEngine:
         weights: str | Path | None = None,
         conf: float = 0.25,
         iou: float = 0.45,
-        imgsz: int = 416,
+        imgsz: int = 320,
         device: str = "cpu",
     ) -> None:
+        import torch
+
+        torch.set_num_threads(1)
         path = resolve_weights(weights)
         if not path.exists():
             raise FileNotFoundError(f"Model weights not found: {path}")
