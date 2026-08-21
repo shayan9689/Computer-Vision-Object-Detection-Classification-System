@@ -17,13 +17,17 @@ default_origins = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
 ]
-extra = [o.strip() for o in os.getenv("CORS_ORIGINS", "").split(",") if o.strip()]
-allow_origins = default_origins + extra
+raw = os.getenv("CORS_ORIGINS", "").strip()
+extra = [o.strip().rstrip("/") for o in raw.split(",") if o.strip() and o.strip() != "*"]
+allow_all = raw == "*" or os.getenv("ALLOW_ALL_CORS", "").lower() in {"1", "true", "yes"}
 
+# Browser calls from Vercel fail unless the exact origin is allowed.
+# Also allow any https://*.vercel.app preview/production URL.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=allow_origins or ["*"],
-    allow_credentials=True,
+    allow_origins=["*"] if allow_all else (default_origins + extra),
+    allow_origin_regex=None if allow_all else r"https://.*\.vercel\.app",
+    allow_credentials=not allow_all,
     allow_methods=["*"],
     allow_headers=["*"],
 )

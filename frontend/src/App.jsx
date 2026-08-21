@@ -3,7 +3,8 @@ import DetectionOverlay from './components/DetectionOverlay'
 import DetectionList from './components/DetectionList'
 import SceneAnalysis from './components/SceneAnalysis'
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
+const API_BASE = (import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000').replace(/\/$/, '')
+
 
 const MODES = [
   { id: 'image', label: 'IMAGE', icon: '/logos/image.png', accept: 'image/*' },
@@ -76,7 +77,8 @@ export default function App() {
     async function ping() {
       const t0 = performance.now()
       try {
-        const res = await fetch(`${API_BASE}/health`)
+        // Render free tier can take a long time to wake from sleep
+        const res = await fetch(`${API_BASE}/health`, { cache: 'no-store' })
         const ms = Math.round(performance.now() - t0)
         if (!cancelled) {
           setLatencyMs(ms)
@@ -90,7 +92,7 @@ export default function App() {
       }
     }
     ping()
-    const id = setInterval(ping, 8000)
+    const id = setInterval(ping, 10000)
     return () => {
       cancelled = true
       clearInterval(id)
