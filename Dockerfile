@@ -14,9 +14,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-# CPU-only PyTorch (correct for free CPU hosts)
+# CPU-only PyTorch + torchvision (YOLO needs torchvision::nms)
 RUN pip install --no-cache-dir --upgrade pip \
-    && pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu
+    && pip install --no-cache-dir torch torchvision --index-url https://download.pytorch.org/whl/cpu
 
 COPY backend/requirements-docker.txt /app/requirements-docker.txt
 RUN pip install --no-cache-dir -r /app/requirements-docker.txt
